@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Remotes — Remote dasturlash studiyasi | Portfolio</title>
+  <meta name="description" content="Multiple Remotes — dunyo bo'ylab tarqalgan remote dasturchilar jamoasi. Web, mobil, DevOps va multi-repo sinxronizatsiya bo'yicha portfolio.">
+  <meta name="theme-color" id="metaTheme" content="#E4F0FB">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8C%90%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- SVG ICON LIBRARY -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3l1.9 5.4L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.6L12 3z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></g></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><circle cx="18" cy="8" r="2.6"/><path d="M6 8.6v6.8M8.5 6.8c3.4.9 5.5 2.2 7 4.6M13 14c1.6 2 3.2 2.9 5 3.2"/></g></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 6l-6 6 6 6M16 6l6 6-6 6M13.5 4l-3 16"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 18.5h3"/></g></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5L22 8l-10 5.5L2 8l10-5.5z"/><path d="M2 12.5l10 5.5 10-5.5M2 17l10 5 10-5"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.2 3.6-5 6.5-5s5.5 1.8 6.5 5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16.5 15.2c2.5.3 4.3 1.9 5 4.3"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3.4v5.6c0 4.8-3.3 8.2-7.5 9.9-4.2-1.7-7.5-5.1-7.5-9.9V5.9L12 2.5z"/><path d="M8.8 12l2.2 2.2 4.2-4.2"/></g></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M7 9l3.5 3L7 15M13 15h4.5"/></g></symbol>
+    <symbol id="i-cloud-sync" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 18a4.5 4.5 0 0 1-.4-9A6 6 0 0 1 17.8 7.7 4.3 4.3 0 0 1 18 16.3"/><path d="M9.5 13.5l2.5-2.5 2.5 2.5M12 11v8"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 6.5L2 7"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></g></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 15.5c-1.8-3 .5-7.5 3.5-10C12 3 16.5 2 21.5 2.5c.5 5-.5 9.5-3 12.5-2.5 3-7 5.3-10 3.5"/><circle cx="15" cy="9" r="2"/><path d="M5.5 15.5L3 21l5.5-2.5M9 12l3 3"/></g></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-6"/><path d="M17 7h3v3"/></g></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3.5" width="18" height="7" rx="2.5"/><rect x="3" y="13.5" width="18" height="7" rx="2.5"/><path d="M7 7h.01M7 17h.01M11 7h3M11 17h3"/></g></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></g></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></g></symbol>
+    <symbol id="i-remotes" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.4"/><circle cx="4.5" cy="5" r="2"/><circle cx="19.5" cy="5" r="2"/><circle cx="12" cy="21" r="2"/><path d="M6 6.4L9.9 10M18 6.4L14.1 10M12 14.4v4.4"/></g></symbol>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#bosh" class="brand" aria-label="Multiple Remotes bosh sahifa">
+        <span class="brand-icon"><svg><use href="#i-remotes"/></svg></span>
+        <span class="brand-text">Multiple <em>Remotes</em></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Asosiy menyu">
+        <a href="#bosh" class="nav-link active">Bosh sahifa</a>
+        <a href="#haq" class="nav-link">Haqimizda</a>
+        <a href="#xizmatlar" class="nav-link">Xizmatlar</a>
+        <a href="#loyihalar" class="nav-link">Loyihalar</a>
+        <a href="#jamoa" class="nav-link">Jamoa</a>
+        <a href="#fikrlar" class="nav-link">Fikrlar</a>
+        <a href="#aloqa" class="nav-link">Aloqa</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle soft-btn" id="themeToggle" aria-label="Kun/tun rejimini almashtirish" title="Rejimni almashtirish">
+          <svg class="ic ic-sun"><use href="#i-sun"/></svg>
+          <svg class="ic ic-moon"><use href="#i-moon"/></svg>
+        </button>
+        <a href="#aloqa" class="btn btn-primary btn-sm hide-sm">Loyiha buyurtirish</a>
+        <button class="nav-burger soft-btn" id="navBurger" aria-label="Menyuni ochish" aria-expanded="false">
+          <svg class="ic ic-open"><use href="#i-menu"/></svg>
+          <svg class="ic ic-shut"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="bosh">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="pill-badge soft-btn">
+            <svg class="ic"><use href="#i-sparkle"/></svg>
+            Distributed jamoa • 9 vaqt mintaqasi
+          </span>
+          <h1 class="hero-title">Bir kod — <span class="accent-word">bir nechta remote</span>, bitta jamoa</h1>
+          <p class="hero-text">
+            Multiple Remotes — dunyoning turli burchaklarida ishlaydigan dasturchilar, dizaynerlar
+            va DevOps muhandislari jamoasi. Biz mahsulotlarni noldan yaratamiz, kodni bir nechta
+            git remote va mirror repolarga sinxronlaymiz va 24/7 uzluksiz yetkazib beramiz.
+          </p>
+          <div class="hero-actions">
+            <a href="#loyihalar" class="btn btn-primary">
+              Loyihalarni ko'rish <svg class="ic"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="#aloqa" class="btn btn-soft">Biz bilan bog'lanish</a>
+          </div>
+          <ul class="hero-trust">
+            <li><svg class="ic"><use href="#i-check"/></svg> Multi-repo sinxronizatsiya</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> 24/7 CI/CD pipeline</li>
+            <li><svg class="ic"><use href="#i-check"/></svg> 8+ yillik tajriba</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal delay-1">
+          <div class="hero-frame soft-panel">
+            <img src="images/hero.jpg" alt="Multiple Remotes jamoasi — bir nechta qurilma va bulutli serverlarga ulangan remote ish muhiti" class="hero-img">
+          </div>
+          <div class="float-card float-card-remotes soft-panel">
+            <span class="float-ic"><svg><use href="#i-cloud-sync"/></svg></span>
+            <span class="float-body"><b>3 ta remote'ga push</b><small>origin • mirror • backup</small></span>
+          </div>
+          <div class="float-card float-card-tz soft-panel">
+            <span class="float-ic gold"><svg><use href="#i-globe"/></svg></span>
+            <span class="float-body"><b>9 vaqt mintaqasi</b><small>bitta sprint, bitta maqsad</small></span>
+          </div>
+          <span class="hero-blob hero-blob-1" aria-hidden="true"></span>
+          <span class="hero-blob hero-blob-2" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="container">
+        <div class="stats soft-panel reveal delay-2">
+          <div class="stat">
+            <span class="stat-num" data-count="48" data-suffix="+">0</span>
+            <span class="stat-label">Muvaffaqiyatli loyiha</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="14" data-suffix="+">0</span>
+            <span class="stat-label">Remote mutaxassis</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="9" data-suffix="">0</span>
+            <span class="stat-label">Vaqt mintaqasi</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="99.9" data-decimals="1" data-suffix="%">0</span>
+            <span class="stat-label">Uptime ko'rsatkichi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="haq">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-frame soft-panel">
+            <img src="images/team-map.jpg" alt="Dunyoning turli nuqtalarida joylashgan Multiple Remotes jamoasi xaritasi">
+          </div>
+          <div class="about-badge soft-panel">
+            <span class="float-ic"><svg><use href="#i-git"/></svg></span>
+            <span class="float-body"><b>git push --all</b><small>har bir commit — hamma joyga</small></span>
+          </div>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <span class="section-label soft-btn"><svg class="ic"><use href="#i-sparkle"/></svg> Haqimizda</span>
+          <h2 class="section-title">Nega «Multiple Remotes»? Chunki biz <span class="accent-word">bir vaqtning o'zida hamma joydamiz</span></h2>
+          <p class="section-text">
+            Git'da bir nechta remote — bu kodning xavfsiz, tezkor va ishonchli tarqalishi demak.
+            Biz ham xuddi shunday ishlaymiz: jamoamiz Toshkent, London, Berlin, Dubay va Tokioda
+            joylashgan, ish jarayoni esa hech qachon to'xtamaydi. Quyosh botgan joyda ishni
+            boshqa vaqt mintaqasidagi hamkasb davom ettiradi.
+          </p>
+          <ul class="about-list">
+            <li class="soft-item"><svg class="ic"><use href="#i-check"/></svg> Kod 3 xil mintaqadagi mirror repolarga sinxronlanadi</li>
+            <li class="soft-item"><svg class="ic"><use href="#i-check"/></svg> Follow-the-sun modeli — kechiktirilmas support</li>
+            <li class="soft-item"><svg class="ic"><use href="#i-check"/></svg> Har bir mijoz uchun shaffos dashboard va weekly report</li>
+            <li class="soft-item"><svg class="ic"><use href="#i-check"/></svg> Ochiq kod va ochiq kommunikatsiya siyosati</li>
+          </ul>
+          <a href="#xizmatlar" class="btn btn-primary">
+            Xizmatlar bilan tanishish <svg class="ic"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="xizmatlar">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label soft-btn"><svg class="ic"><use href="#i-terminal"/></svg> Xizmatlar</span>
+          <h2 class="section-title">G'oyadan <span class="accent-word">ishga tushirilgan mahsulotgacha</span></h2>
+          <p class="section-text">Biz faqat kod yozmaymiz — biznesingiz uchun to'liq raqamli yechim quramiz.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card soft-panel reveal">
+            <span class="service-ic"><svg class="ic"><use href="#i-code"/></svg></span>
+            <h3 class="service-name">Web dasturlash</h3>
+            <p class="service-desc">Tezkor, xavfsiz va kengaytiriladigan web ilovalar: SPA, SSR, API va admin panelgacha.</p>
+            <div class="service-tags">
+              <span class="service-tag soft-item">React</span>
+              <span class="service-tag soft-item">Next.js</span>
+              <span class="service-tag soft-item">Node.js</span>
+            </div>
+          </article>
+
+          <article class="service-card soft-panel reveal delay-1">
+            <span class="service-ic"><svg class="ic"><use href="#i-mobile"/></svg></span>
+            <h3 class="service-name">Mobil ilovalar</h3>
+            <p class="service-desc">iOS va Android uchun cross-platform ilovalar — bitta kod bazasi, ikki do'kon, yuqori sifat.</p>
+            <div class="service-tags">
+              <span class="service-tag soft-item">Flutter</span>
+              <span class="service-tag soft-item">React Native</span>
+            </div>
+          </article>
+
+          <article class="service-card soft-panel reveal delay-2">
+            <span class="service-ic"><svg class="ic"><use href="#i-cloud-sync"/></svg></span>
+            <h3 class="service-name">Multi-remote DevOps</h3>
+            <p class="service-desc">Kodingizni GitHub, GitLab va xususiy Git serverlarga bir vaqtda sinxronlaymiz: mirror push, backup va disaster recovery.</p>
+            <div class="service-tags">
+              <span class="service-tag soft-item">GitHub</span>
+              <span class="service-tag soft-item">GitLab</span>
+              <span class="service-tag soft-item">Gitea</span>
+            </div>
+          </article>
+
+          <article class="service-card soft-panel reveal">
+            <span class="service-ic"><svg class="ic"><use href="#i-server"/></svg></span>
+            <h3 class="service-name">CI/CD va cloud</h3>
+            <p class="service-desc">Avomatik test, build va deploy pipeline'lari. Zero-downtime relizlar va auto-scaling infratuzilma.</p>
+            <div class="service-tags">
+              <span class="service-tag soft-item">Docker</span>
+              <span class="service-tag soft-item">Kubernetes</span>
+              <span class="service-tag soft-item">AWS</span>
+            </div>
+          </article>
+
+          <article class="service-card soft-panel reveal delay-1">
+            <span class="service-ic"><svg class="ic"><use href="#i-layers"/></svg></span>
+            <h3 class="service-name">UI/UX dizayn</h3>
+            <p class="service-desc">Soft UI'dan tortib korporativ design tizimgacha — foydalanuvchi sevib ishlaydigan interfeyslar.</p>
+            <div class="service-tags">
+              <span class="service-tag soft-item">Figma</span>
+              <span class="service-tag soft-item">Design system</span>
+            </div>
+          </article>
+
+          <article class="service-card soft-panel reveal delay-2">
+            <span class="service-ic"><svg class="ic"><use href="#i-shield"/></svg></span>
+            <h3 class="service-name">Support va monitoring</h3>
+            <p class="service-desc">Follow-the-sun modeli bilan 24/7 monitoring, alerting va texnik yordam — tizimingiz hech qachon uxlamaydi.</p>
+            <div class="service-tags">
+              <span class="service-tag soft-item">Grafana</span>
+              <span class="service-tag soft-item">Sentry</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="loyihalar">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label soft-btn"><svg class="ic"><use href="#i-rocket"/></svg> Portfolio</span>
+          <h2 class="section-title">Tanlangan <span class="accent-word">loyihalarimiz</span></h2>
+          <p class="section-text">Har bir loyiha — real biznes muammosiga topilgan aniq texnik yechim.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card soft-panel reveal">
+            <div class="project-img-wrap">
+              <img src="images/project-gitmirror.jpg" alt="DevMirror — kodni bir nechta git remote'ga sinxronlovchi vosita illyustratsiyasi">
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag soft-btn">Go</span>
+                <span class="project-tag soft-btn">Git</span>
+                <span class="project-tag soft-btn">CLI</span>
+              </div>
+              <h3 class="project-name">DevMirror — multi-remote sync</h3>
+              <p class="project-desc">
+                Bizning flagman open-source vositamiz: bitta buyruq bilan repozitoriyni GitHub, GitLab
+                va xususiy Gitea serverlariga sinxronlaydi. 4 200+ yulduzcha, 90+ kontib'yutor.
+              </p>
+              <div class="project-foot">
+                <span class="project-metric"><svg class="ic"><use href="#i-star"/></svg> 4.2k stars</span>
+                <a href="#aloqa" class="project-link">Batafsil <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card soft-panel reveal delay-1">
+            <div class="project-img-wrap">
+              <img src="images/project-fintech.jpg" alt="FinTrack — real vaqtdagi moliyaviy analytics dashboard interfeysi">
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag soft-btn">React</span>
+                <span class="project-tag soft-btn">Node.js</span>
+                <span class="project-tag soft-btn">PostgreSQL</span>
+              </div>
+              <h3 class="project-name">FinTrack — fintech dashboard</h3>
+              <p class="project-desc">
+                To'lov kompaniyasi uchun real vaqtdagi tranzaksiya monitoringi: kuniga 1.2 mln
+                tranzaksiya, 99.98% uptime, 3 regionda mirror deployment.
+              </p>
+              <div class="project-foot">
+                <span class="project-metric"><svg class="ic"><use href="#i-chart"/></svg> 1.2 mln tranzaksiya/kun</span>
+                <a href="#aloqa" class="project-link">Batafsil <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card soft-panel reveal">
+            <div class="project-img-wrap">
+              <img src="images/project-ecommerce.jpg" alt="ShopLink — zamonaviy e-commerce platforma interfeysi">
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag soft-btn">Next.js</span>
+                <span class="project-tag soft-btn">Stripe</span>
+                <span class="project-tag soft-btn">Redis</span>
+              </div>
+              <h3 class="project-name">ShopLink — e-commerce platforma</h3>
+              <p class="project-desc">
+                Markaziy Osiyo bozori uchun ko'p tilli marketplace: 200+ do'kon, 4 valyuta,
+                bir haftalik sprintlardan iborat to'liq remote ish jarayoni.
+              </p>
+              <div class="project-foot">
+                <span class="project-metric"><svg class="ic"><use href="#i-users"/></svg> 200+ do'kon</span>
+                <a href="#aloqa" class="project-link">Batafsil <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card soft-panel reveal delay-1">
+            <div class="project-img-wrap">
+              <img src="images/project-cargo.jpg" alt="CargoSync — logistika uchun mobil ilova ekranlari">
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag soft-btn">Flutter</span>
+                <span class="project-tag soft-btn">Firebase</span>
+                <span class="project-tag soft-btn">Maps API</span>
+              </div>
+              <h3 class="project-name">CargoSync — logistika ilovasi</h3>
+              <p class="project-desc">
+                Xalqaryuk tashuvchi kompaniya uchun haydovchi va dispetcher ilovasi: jonli GPS
+                kuzatuv, offline-first rejim va push orqali hujjat almashinuvi.
+              </p>
+              <div class="project-foot">
+                <span class="project-metric"><svg class="ic"><use href="#i-pin"/></svg> 12 mamlakatda ishlaydi</span>
+                <a href="#aloqa" class="project-link">Batafsil <svg class="ic"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section" id="jamoa">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label soft-btn"><svg class="ic"><use href="#i-users"/></svg> Jamoa</span>
+          <h2 class="section-title">Quyosh bizda <span class="accent-word">hech qachon botmaydi</span></h2>
+          <p class="section-text">Jamoa a'zolari turli vaqt mintaqalarida ishlaydi — ish jarayoni estafeta kabi uzluksiz davom etadi.</p>
+        </div>
+
+        <div class="team-panel soft-panel reveal delay-1">
+          <div class="team-grid">
+            <div class="team-map">
+              <img src="images/team.jpg" alt="Multiple Remotes jamoasi a'zolari portret kolajlari">
+            </div>
+            <div>
+              <h3 class="section-title left">Hozir jamoada soat necha?</h3>
+              <p class="section-text">Qaysi soat bo'lishidan qat'i nazar, jamoaning bir qismi albatta onlayn.</p>
+              <div class="tz-grid">
+                <div class="tz-card soft-item">
+                  <span class="tz-city"><svg class="ic"><use href="#i-pin"/></svg> Toshkent · UTC+5</span>
+                  <span class="tz-time" data-tz="Asia/Tashkent">--:--:--</span>
+                  <span class="tz-note">Headquarters</span>
+                </div>
+                <div class="tz-card soft-item">
+                  <span class="tz-city"><svg class="ic"><use href="#i-pin"/></svg> London · UTC+0/+1</span>
+                  <span class="tz-time" data-tz="Europe/London">--:--:--</span>
+                  <span class="tz-note">Design hub</span>
+                </div>
+                <div class="tz-card soft-item">
+                  <span class="tz-city"><svg class="ic"><use href="#i-pin"/></svg> Nyu-York · UTC−5/−4</span>
+                  <span class="tz-time" data-tz="America/New_York">--:--:--</span>
+                  <span class="tz-note">Client ops</span>
+                </div>
+                <div class="tz-card soft-item">
+                  <span class="tz-city"><svg class="ic"><use href="#i-pin"/></svg> Tokio · UTC+9</span>
+                  <span class="tz-time" data-tz="Asia/Tokyo">--:--:--</span>
+                  <span class="tz-note">DevOps shift</span>
+                </div>
+              </div>
+              <div class="team-members">
+                <span class="member-chip soft-btn"><span class="member-avatar">MK</span><span class="member-body"><b>Maruf Kamolov</b><small>Lead Engineer</small></span></span>
+                <span class="member-chip soft-btn"><span class="member-avatar">SA</span><span class="member-body"><b>Sitora Alimova</b><small>Product Designer</small></span></span>
+                <span class="member-chip soft-btn"><span class="member-avatar">JR</span><span class="member-body"><b>James Row</b><small>DevOps Engineer</small></span></span>
+                <span class="member-chip soft-btn"><span class="member-avatar">YT</span><span class="member-body"><b>Yuki Tanaka</b><small>Backend Engineer</small></span></span>
+                <span class="member-chip soft-btn"><span class="member-avatar">NB</span><span class="member-body"><b>Nilufar Berdiyeva</b><small>Frontend Engineer</small></span></span>
+                <span class="member-chip soft-btn"><span class="member-avatar">DK</span><span class="member-body"><b>David Klein</b><small>QA Lead</small></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="jarayon">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label soft-btn"><svg class="ic"><use href="#i-git"/></svg> Jarayon</span>
+          <h2 class="section-title">Qanday <span class="accent-word">ishlaymiz?</span></h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-card soft-panel reveal">
+            <span class="process-num">01</span>
+            <h3 class="process-name">Kashf etish</h3>
+            <p class="process-desc">Biznes maqsadlaringizni tinglaymiz, texnik audit o'tkazamiz va aniq yo'l xaritasini tuzamiz.</p>
+          </article>
+          <article class="process-card soft-panel reveal delay-1">
+            <span class="process-num">02</span>
+            <h3 class="process-name">Prototip va dizayn</h3>
+            <p class="process-desc">Interaktiv prototip, UI kit va design system — kod yozishdan oldin hammasini sinab ko'ramiz.</p>
+          </article>
+          <article class="process-card soft-panel reveal delay-2">
+            <span class="process-num">03</span>
+            <h3 class="process-name">Qod va sinxron</h3>
+            <p class="process-desc">Haftalik sprintlar, code review va multi-remote sinxronizatsiya — kod doim xavfsiz va tarqalgan.</p>
+          </article>
+          <article class="process-card soft-panel reveal delay-2">
+            <span class="process-num">04</span>
+            <h3 class="process-name">Reliz va support</h3>
+            <p class="process-desc">Zero-downtime deploy, monitoring va follow-the-sun support — mahsulot barqaror o'sadi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="fikrlar">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label soft-btn"><svg class="ic"><use href="#i-star"/></svg> Fikrlar</span>
+          <h2 class="section-title">Mijozlarimiz <span class="accent-word">nima deydi</span></h2>
+        </div>
+        <div class="testi-grid">
+          <article class="testi-card soft-panel reveal">
+            <div class="testi-stars">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </div>
+            <p class="testi-quote">«Multiple Remotes bilan ishlaganimizdan beri relizlarimiz haftasiga 3 martadan 15 martagacha ko'tarildi. Multi-remote CI/CD tizimlari haqiqiy game changer.»</p>
+            <div class="testi-person">
+              <span class="testi-avatar soft-btn">AT</span>
+              <span class="testi-body"><b>Akbar Tursunov</b><small>CTO, PayFlow · Toshkent</small></span>
+            </div>
+          </article>
+          <article class="testi-card soft-panel reveal delay-1">
+            <div class="testi-stars">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </div>
+            <p class="testi-quote">«Biz London'da kechqurun muammo yuboramiz — ertalabga qadar Tokiodagi jamoa uni hal qilgan bo'ladi. Follow-the-sun modeli shunchaki reklama emas ekan.»</p>
+            <div class="testi-person">
+              <span class="testi-avatar soft-btn">EW</span>
+              <span class="testi-body"><b>Emily Watson</b><small>Product Lead, Brightly · London</small></span>
+            </div>
+          </article>
+          <article class="testi-card soft-panel reveal delay-2">
+            <div class="testi-stars">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </div>
+            <p class="testi-quote">«Marketplace'imiz 4 oyda noldan 200 do'kongacha o'sdi. Jamoa har hafta aniq hisobot berib bordi — hamma narsa shaffos va o'z vaqtida.»</p>
+            <div class="testi-person">
+              <span class="testi-avatar soft-btn">FN</span>
+              <span class="testi-body"><b>Farrux Nazarov</b><small>Founder, ShopLink · Samarqand</small></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="aloqa">
+      <div class="container">
+        <div class="contact-panel soft-panel reveal">
+          <div class="contact-copy">
+            <span class="section-label soft-btn"><svg class="ic"><use href="#i-send"/></svg> Loyiha boshlash</span>
+            <h2 class="section-title left">G'oyangizni<br>bizga ayting</h2>
+            <p class="section-text">Yangi mahsulotmi, mavjud tizimni yangilashmi yoki multi-remote infratuzilma kerakmi — 24 soat ichida javob beramiz.</p>
+            <ul class="contact-perks">
+              <li><span class="perk-ic soft-btn"><svg><use href="#i-shield"/></svg></span> NDA va kod xavfsizligi kafolati</li>
+              <li><span class="perk-ic soft-btn"><svg><use href="#i-clock"/></svg></span> 24 soat ichida dastlabki javob</li>
+              <li><span class="perk-ic soft-btn"><svg><use href="#i-rocket"/></svg></span> 2 haftada birinchi ishlaydigan prototip</li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="cName">Ismingiz</label>
+                <input type="text" id="cName" name="name" placeholder="Masalan: Aziz Karimov" required>
+              </div>
+              <div class="field">
+                <label for="cEmail">Email</label>
+                <input type="email" id="cEmail" name="email" placeholder="siz@kompaniya.uz" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="cCompany">Kompaniya</label>
+                <input type="text" id="cCompany" name="company" placeholder="Kompaniya nomi (ixtiyoriy)">
+              </div>
+              <div class="field">
+                <label for="cType">Loyiha turi</label>
+                <select id="cType" name="type">
+                  <option value="web">Web ilova</option>
+                  <option value="mobile">Mobil ilova</option>
+                  <option value="devops">Multi-remote / DevOps</option>
+                  <option value="design">UI/UX dizayn</option>
+                  <option value="other">Boshqa</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cMsg">Loyiha haqida qisqacha</label>
+              <textarea id="cMsg" name="message" rows="4" placeholder="Maqsadingiz, muddat va byudjet haqida yozing..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              So'rovni yuborish <svg class="ic"><use href="#i-send"/></svg>
+            </button>
+            <p class="form-note">Yuborilgan ma'lumotlar faqat javob berish uchun ishlatiladi va uchinchi shaxslarga berilmaydi.</p>
+          </form>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info-grid">
+          <a href="mailto:salom@multipleremotes.dev" class="info-card soft-panel reveal">
+            <span class="info-ic"><svg><use href="#i-mail"/></svg></span>
+            <span class="info-label">Email</span>
+            <span class="info-value">salom@multipleremotes.dev</span>
+          </a>
+          <a href="tel:+998712005566" class="info-card soft-panel reveal delay-1">
+            <span class="info-ic"><svg><use href="#i-phone"/></svg></span>
+            <span class="info-label">Telefon</span>
+            <span class="info-value">+998 71 200 55 66</span>
+          </a>
+          <div class="info-card soft-panel reveal delay-2">
+            <span class="info-ic"><svg><use href="#i-pin"/></svg></span>
+            <span class="info-label">HQ</span>
+            <span class="info-value">Toshkent, Mirzo Ulug'bek tumani</span>
+          </div>
+          <div class="info-card soft-panel reveal delay-2">
+            <span class="info-ic"><svg><use href="#i-globe"/></svg></span>
+            <span class="info-label">Ish tartibi</span>
+            <span class="info-value">100% remote · 24/7 navbatchilik</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer soft-panel">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#bosh" class="brand">
+          <span class="brand-icon"><svg><use href="#i-remotes"/></svg></span>
+          <span class="brand-text">Multiple <em>Remotes</em></span>
+        </a>
+        <p>Dunyoning turli burchaklaridagi dasturchilar jamoasi. Bir kod — bir nechta remote, bitta sifat standarti.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn soft-btn" aria-label="GitHub"><svg><use href="#i-git"/></svg></a>
+          <a href="#" class="social-btn soft-btn" aria-label="Telegram"><svg><use href="#i-send"/></svg></a>
+          <a href="#" class="social-btn soft-btn" aria-label="LinkedIn"><svg><use href="#i-users"/></svg></a>
+          <a href="#" class="social-btn soft-btn" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Tezkor havolalar">
+        <h4>Sayt bo'limlari</h4>
+        <a href="#bosh">Bosh sahifa</a>
+        <a href="#haq">Haqimizda</a>
+        <a href="#xizmatlar">Xizmatlar</a>
+        <a href="#loyihalar">Loyihalar</a>
+        <a href="#jamoa">Jamoa</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Aloqa</h4>
+        <a href="mailto:salom@multipleremotes.dev"><svg class="ic"><use href="#i-mail"/></svg> salom@multipleremotes.dev</a>
+        <a href="tel:+998712005566"><svg class="ic"><use href="#i-phone"/></svg> +998 71 200 55 66</a>
+        <a href="#aloqa"><svg class="ic"><use href="#i-pin"/></svg> Toshkent, Mirzo Ulug'bek tumani</a>
+        <a href="#aloqa"><svg class="ic"><use href="#i-clock"/></svg> 24/7 remote navbatchilik</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© <span id="year">2026</span> Multiple Remotes. Barcha huquqlar himoyalangan.</span>
+        <span class="footer-made">9 vaqt mintaqasida yasalgan <svg class="ic"><use href="#i-globe"/></svg></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast soft-panel" id="toast" role="status" aria-live="polite">
+    <span class="toast-ic soft-btn"><svg><use href="#i-check"/></svg></span>
+    <span class="toast-msg" id="toastMsg">Rahmat!</span>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
